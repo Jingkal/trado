@@ -1,0 +1,17 @@
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(outdir ${CMAKE_SOURCE_DIR}/out/${CMAKE_BUILD_TYPE})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${outdir})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${outdir}/libs)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${outdir}/libs)
+
+# Debuging CMAKE =========================================================
+if (CDEBUG)
+    message(STATUS ">>> OUTPUT_RUNTIME: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+    message(STATUS ">>> OUTPUT_ARCHIVE: ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
+    message(STATUS ">>> OUTPUT_LIBRARY: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+endif()
